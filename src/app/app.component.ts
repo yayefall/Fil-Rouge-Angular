@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ConnexionService} from './_services/connexion.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'fil-rouge-angular';
+  constructor(private connexionService: ConnexionService) {
+  }
+
+  // tslint:disable-next-line:typedef
+  logout(){
+    this.connexionService.logout();
+  }
 }
